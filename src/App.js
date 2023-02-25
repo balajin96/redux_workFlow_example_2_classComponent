@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { useSelector, useDispatch, connect } from "react-redux";
+import { connect } from "react-redux"; //useSelector, useDispatch,
 import { appleAction, googleAction, subscribeAction } from "./index";
 
 const appstyle = {
