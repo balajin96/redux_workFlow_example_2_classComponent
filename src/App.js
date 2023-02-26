@@ -8,6 +8,7 @@ const appstyle = {
   fontFamily: "Arial, Verdana, sans-serif"
 };
 class App extends Component {
+  //please note useSelector ,useDispatch is used for Functional Components
   //const techies = useSelector((state) => state);
   // const dispatch = useDispatch();
 
@@ -38,9 +39,16 @@ class App extends Component {
     );
   }
 }
+
+//please note that MSTP & MDTP is used not a built-in key name. which is used only for naming conventional.
+// connect is used in react-redux and which is used to connect that MSTP & MDTP. 
+
+//which is used to render the data into rendered UI.
 const mapsStateToProps = (state) => {
   return state;
 };
+
+//which is used to pass the action creator to dispatch using payload.
 const mapsDispatchToProps = (dispatch) => {
   return {
     appleDisptaching: () => dispatch(appleAction()),
@@ -48,5 +56,6 @@ const mapsDispatchToProps = (dispatch) => {
     subscribeDisptaching: () => dispatch(subscribeAction())
   };
 };
-
+// we can able to pass only ONE COMPONENT into connect
+//here we have used App component is passed into connect function.
 export default connect(mapsStateToProps, mapsDispatchToProps)(App);
